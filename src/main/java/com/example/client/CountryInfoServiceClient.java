@@ -4,6 +4,8 @@ import org.oorsprong.webservices.countryinfoservice.ListOfContinentsByName;
 import org.oorsprong.webservices.countryinfoservice.ListOfContinentsByNameResponse;
 import org.oorsprong.webservices.countryinfoservice.ListOfCountryNamesByName;
 import org.oorsprong.webservices.countryinfoservice.ListOfCountryNamesByNameResponse;
+import org.oorsprong.webservices.countryinfoservice.ListOfCurrenciesByCode;
+import org.oorsprong.webservices.countryinfoservice.ListOfCurrenciesByCodeResponse;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
 public class CountryInfoServiceClient extends WebServiceGatewaySupport {
@@ -16,5 +18,10 @@ public class CountryInfoServiceClient extends WebServiceGatewaySupport {
 	public ListOfCountryNamesByNameResponse getListOfCountryNamesByName() {
 		ListOfCountryNamesByName req = new ListOfCountryNamesByName();
 		return (ListOfCountryNamesByNameResponse) getWebServiceTemplate().marshalSendAndReceive(req);
+	}
+	
+	public ListOfCurrenciesByCodeResponse getListOfCurrenciesByCode() {
+		ListOfCurrenciesByCode req = new ListOfCurrenciesByCode();
+		return (ListOfCurrenciesByCodeResponse)getWebServiceTemplate().marshalSendAndReceive(req);
 	}
 }
